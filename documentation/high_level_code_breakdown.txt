@@ -1,11 +1,11 @@
-Software to automate the full logistical life cycle of cargo and science from launch, on-orbit operations to return. This software as a service has two parts. It first uses machine learning to accurately sort cargo and science to different hardware locations based on variables like mass, dimensions, temperature requirements, and volume. The second part uses a bin packing algorithm to optimally pack the cargo and science into the hardware. 
+Software to automate the full logistical life cycle of cargo and science from launch, on-orbit operations to return. This software as a service has two parts. It first uses machine learning to accurately sort cargo and science to different hardware locations based on variables like mass, dimensions, temperature requirements, and volume. The second part uses a bin packing algorithm to optimally pack the cargo and science into the hardware.
 
 Reference slide 2 for results analysis.
-Results: 
+Results:
 Image 1 (left)
 Decision tree results showing sorting of science into different temperature controlled assets
 Image 2 (bottom right)
-Packing efficiencies results of ambient cargo and temperature controlled cargo. This shows at least 80-90% packing efficiency for both types of bins. 
+Packing efficiencies results of ambient cargo and temperature controlled cargo. This shows at least 80-90% packing efficiency for both types of bins.
 Image 3 (top right)
 3D visual representation of the bin packing algorithm
 
@@ -13,3 +13,5 @@ This utility improves the process of loading cargo for space by automating the c
 The FFD algorithm sorts the cargo items by temperature and volume, and then tries to fit the items into the available bins in descending order of volume. It works by trying to fit the largest item first into the first available bin that has enough remaining capacity and the same temperature requirement. If an item cannot fit in any existing bin, a new bin of appropriate size and temperature is created. This approach helps to optimize the space utilization and minimize the number of bins required.
 In the code, we define a Bin class to store cargo items with the same temperature and track their remaining capacity. The cargo data is read from a CSV file, and the FFD algorithm is implemented in the first_fit_decreasing function. The packing efficiency is calculated by comparing the total cargo weight to the total bin capacity. The visualize_efficiencies function generates bar charts to compare the efficiency of the FFD algorithm against the theoretical perfect efficiency for both cold and ambient stowage.
 As for future improvements, more advanced algorithms such as the Best Fit Decreasing (BFD) or the Next Fit Decreasing (NFD) could be explored to further optimize the packing process. Additionally, the code could be extended to consider other constraints like orientation and more complex shapes, as well as real-time adjustments based on changes in cargo requirements. Machine learning approaches could also be employed to learn from historical data and further enhance the packing efficiency.
+
+Correction
